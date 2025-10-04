@@ -3,229 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>City Health Dashboard — Cosmic</title>
+  <title>City Health Dashboard — Layout do João</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
 </head>
-<body class="theme-cosmic">
-  <!-- cosmic background -->
-  <div class="bg-canvas" aria-hidden="true">
-    <div class="bg-gradient"></div>
-    <div class="bg-noise"></div>
-    <svg class="bg-orbits" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-      <g opacity=".25" stroke="url(#g)" fill="none">
-        <ellipse cx="400" cy="300" rx="360" ry="170" />
-        <ellipse cx="420" cy="310" rx="280" ry="130" />
-        <ellipse cx="380" cy="295" rx="210" ry="95" />
-      </g>
-      <defs>
-        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#87A0FF"/>
-          <stop offset="1" stop-color="#9A6BFF"/>
-        </linearGradient>
-      </defs>
-    </svg>
-  </div>
+<body>
 
-  <!-- HEADER -->
-  <header class="site-header glass">
+  <!-- HEADER / HERO (resumo simplificado com o visual galaxy) -->
+  <header class="site-header">
     <div class="container header-wrap">
-      <a class="brand" href="#">
-        <span class="logo-dot">✦</span>
-        <div class="brand-text">
+      <div class="brand">
+        <span class="logo">✦</span>
+        <div>
           <strong>City Health Dashboard</strong>
           <small>Powered by NASA Earth data</small>
         </div>
-      </a>
+      </div>
       <nav class="nav">
-        <a href="#inicio">Home</a>
-        <a href="#como-funciona">How it works</a>
-        <a href="#beneficios">Benefits</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#contato" class="pill">Log in</a>
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#board">Dashboard</a>
+        <a href="#">Private sale</a>
+        <a class="pill" href="#">Log in</a>
       </nav>
     </div>
+
+    <section class="hero container">
+      <div class="hero-copy">
+        <h1>Plan your city’s resilient future with <em>NASA data</em></h1>
+        <p>Uma plataforma para prefeituras e órgãos ambientais priorizarem investimentos com base em ciência — calor, ar/água, verde e enchentes.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#board">Explorar o Dashboard</a>
+          <a class="btn ghost" href="#">Entenda em 60s</a>
+        </div>
+        <div class="chips">
+          <span class="chip">Heat • ECOSTRESS</span>
+          <span class="chip">Air • OMI/TEMPO</span>
+          <span class="chip">Green • NDVI</span>
+          <span class="chip">Flood • SRTM+GPM</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="planet"></div>
+        <div class="planet small"></div>
+        <div class="planet ring"></div>
+      </div>
+    </section>
   </header>
 
-  <!-- HERO -->
-  <section id="inicio" class="hero container">
-    <div class="hero-inner">
-      <h1><span class="fade">Plan your city’s</span><br> resilient future with <em>NASA data</em></h1>
-      <p>Uma plataforma para <strong>prefeituras</strong> e <strong>órgãos ambientais</strong> priorizarem investimentos com base em ciência — calor, ar/água, verde e enchentes.</p>
-      <div class="cta-row">
-        <a href="#dashboard" class="btn primary glow">Explorar o Dashboard</a>
-        <a href="#como-funciona" class="btn ghost">Entenda em 60s</a>
-      </div>
-      <div class="hero-cards">
-        <div class="chip">Heat • ECOSTRESS</div>
-        <div class="chip">Air • OMI/TEMPO</div>
-        <div class="chip">Green • NDVI</div>
-        <div class="chip">Flood • SRTM+GPM</div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="planet"></div>
-      <div class="planet small"></div>
-      <div class="planet ring"></div>
-    </div>
-  </section>
-
-  <!-- COMO FUNCIONA -->
-  <section id="como-funciona" class="section container">
-    <h2 class="title">Como Funciona</h2>
-    <p class="subtitle">Quatro módulos simples, dados globais, decisões locais.</p>
-    <div class="grid four">
-      <article class="card neon">
-        <div class="icon i-air"></div>
-        <h3>Qualidade do Ar/Água</h3>
-        <p>PM2.5 (OMI/TEMPO) e riscos hídricos para sinalizar áreas críticas.</p>
-        <a class="link" href="#dashboard">Ver no mapa →</a>
-      </article>
-      <article class="card neon">
-        <div class="icon i-green"></div>
-        <h3>Áreas Verdes</h3>
-        <p>Índice NDVI (MODIS/Landsat) e acesso a parques por bairro.</p>
-        <a class="link" href="#dashboard">Ver no mapa →</a>
-      </article>
-      <article class="card neon">
-        <div class="icon i-heat"></div>
-        <h3>Calor Extremo</h3>
-        <p>Ilhas de calor (ECOSTRESS/Landsat) e exposição populacional.</p>
-        <a class="link" href="#dashboard">Ver no mapa →</a>
-      </article>
-      <article class="card neon">
-        <div class="icon i-flood"></div>
-        <h3>Enchentes</h3>
-        <p>Relevo (SRTM) + chuva (GPM) para mapear risco de inundação.</p>
-        <a class="link" href="#dashboard">Ver no mapa →</a>
-      </article>
-    </div>
-  </section>
-
-  <!-- BENEFÍCIOS -->
-  <section id="beneficios" class="section container">
-    <h2 class="title">Benefícios</h2>
-    <div class="grid two">
-      <article class="card glass-rich">
-        <h3>Gestores Públicos (Prefeituras)</h3>
-        <ul>
-          <li>Priorização de investimentos com score de vulnerabilidade</li>
-          <li>Transparência: relatórios e visualizações claras</li>
-          <li>Resposta rápida a ondas de calor e enchentes</li>
-        </ul>
-      </article>
-      <article class="card glass-rich">
-        <h3>Órgãos Ambientais e Urbanismo</h3>
-        <ul>
-          <li>Monitoramento contínuo de indicadores ambientais</li>
-          <li>Base para políticas públicas e captação de recursos</li>
-          <li>Método replicável em qualquer cidade</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- DASHBOARD MOCK “GALAXY STYLE” -->
-  <section id="dashboard" class="section container">
-    <div class="dash-head">
-      <h2 class="title">Dashboard</h2>
-      <div class="segment">
-        <button class="seg active">Heat</button>
-        <button class="seg">Green</button>
-        <button class="seg">Air</button>
-        <button class="seg">Flood</button>
-      </div>
-    </div>
-
-    <div class="dash-grid">
-      <!-- Mapa (mock visual) -->
-      <div class="dash-map glass">
-        <div class="map-stars"></div>
-        <div class="legend glass-min">
-          <span class="dot air"></span> Air
-          <span class="dot green"></span> Green
-          <span class="dot heat"></span> Heat
-          <span class="dot flood"></span> Flood
-        </div>
-        <!-- pins -->
-        <span class="pin air" style="left:36%; top:28%"></span>
-        <span class="pin heat" style="left:62%; top:42%"></span>
-        <span class="pin green" style="left:48%; top:66%"></span>
-        <span class="pin flood" style="left:25%; top:55%"></span>
-      </div>
-
-      <!-- Painel -->
-      <aside class="dash-side glass">
-        <div class="field">
+  <!-- BARRA DE CONTROLES + BOTÃO ASSISTENTE -->
+  <section class="controls">
+    <div class="container controls-row">
+      <div class="controls-group">
+        <div class="ctrl">
           <label>Cidade</label>
-          <div class="select disabled">Recife</div>
+          <select>
+            <option>Recife</option>
+            <option>São Paulo</option>
+            <option>Belo Horizonte</option>
+          </select>
         </div>
-        <div class="field">
+        <div class="ctrl">
           <label>Densidade populacional</label>
-          <div class="select disabled">Todas</div>
+          <select>
+            <option>Todas</option><option>Baixa</option><option>Média</option><option>Alta</option>
+          </select>
         </div>
-        <div class="field">
+        <div class="ctrl">
           <label>Renda</label>
-          <div class="select disabled">Todas</div>
+          <select>
+            <option>Todas</option><option>Baixa</option><option>Média</option><option>Alta</option>
+          </select>
         </div>
+      </div>
 
-        <div class="checks">
-          <span class="caption">Camadas</span>
-          <label><input type="checkbox" checked disabled> Air/Water</label>
-          <label><input type="checkbox" checked disabled> Green</label>
-          <label><input type="checkbox" checked disabled> Heat</label>
-          <label><input type="checkbox" checked disabled> Flood</label>
-        </div>
-
-        <div class="metrics">
-          <div class="metric"><span>Heat index</span><strong>3,0 °C</strong></div>
-          <div class="metric"><span>Green access</span><strong>18%</strong></div>
-          <div class="metric"><span>PM2.5</span><strong>22 µg/m³</strong></div>
-          <div class="metric"><span>Flood risk</span><strong>78%</strong></div>
-        </div>
-
-        <div class="actions">
-          <a class="btn primary glow block" href="#">Exportar relatório</a>
-          <a class="btn ghost block" href="#">Simular PNG</a>
-        </div>
-
-        <div class="priority">
-          <h4>Top 5 áreas prioritárias</h4>
-          <ol>
-            <li>Bairro X — 8,4</li>
-            <li>Bairro Z — 7,9</li>
-            <li>Bairro Y — 6,1</li>
-            <li>Subprefeitura A — 5,8</li>
-            <li>Região 1 — 5,2</li>
-          </ol>
-        </div>
-      </aside>
-    </div>
-
-    <div class="card glass-rich case">
-      <h3>Exemplo — Recife</h3>
-      <p>O <strong>Bairro X</strong> apresenta alta temperatura, baixa vegetação e risco de enchente → prioridade máxima para parque urbano e infraestrutura verde.</p>
+      <button id="btnAssistant" class="assistant-btn">Assistente virtual</button>
     </div>
   </section>
 
-  <!-- IMPACTO -->
-  <section class="section container">
-    <h2 class="title">De Recife para o Mundo</h2>
-    <div class="grid three">
-      <div class="tile">Local</div>
-      <div class="tile">Regional</div>
-      <div class="tile">Global</div>
+  <!-- DASHBOARD (mapa à esquerda / sidebar à direita) -->
+  <main id="board" class="container board">
+    <!-- MAPA -->
+    <section class="map glass" aria-label="Mapa">
+      <div class="map-bg"></div>
+      <!-- (pins decorativos) -->
+      <span class="pin air" style="left:28%;top:38%"></span>
+      <span class="pin heat" style="left:56%;top:42%"></span>
+      <span class="pin flood" style="left:40%;top:62%"></span>
+      <span class="pin green" style="left:66%;top:52%"></span>
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="side">
+      <!-- RANK -->
+      <div class="rank glass">
+        <h3>RANK</h3>
+        <ol class="rank-list">
+          <li><span class="badge">1</span> <strong>Bairro X</strong> <em>Score 8,9</em></li>
+          <li><span class="badge">2</span> <strong>Bairro Z</strong> <em>Score 7,7</em></li>
+          <li><span class="badge">3</span> <strong>Bairro Y</strong> <em>Score 6,2</em></li>
+          <li><span class="badge">4</span> <strong>Subprefeitura A</strong> <em>Score 5,8</em></li>
+        </ol>
+      </div>
+
+      <!-- FILTRO (cards) -->
+      <div class="filters glass">
+        <h3>FILTRO</h3>
+
+        <article class="filter-card">
+          <div class="bubble i-air"></div>
+          <div class="filter-text">
+            <h4>Qualidade de Ar/Água</h4>
+            <p>PM2.5 (OMI/TEMPO) e riscos hídricos para sinalizar áreas críticas.</p>
+            <a href="#">Ver no mapa →</a>
+          </div>
+        </article>
+
+        <article class="filter-card">
+          <div class="bubble i-green"></div>
+          <div class="filter-text">
+            <h4>Áreas Verdes</h4>
+            <p>Índice NDVI (MODIS/Landsat) e acesso a parques por bairro.</p>
+            <a href="#">Ver no mapa →</a>
+          </div>
+        </article>
+
+        <article class="filter-card">
+          <div class="bubble i-heat"></div>
+          <div class="filter-text">
+            <h4>Calor Extremo</h4>
+            <p>Ilhas de calor e exposição populacional por distrito.</p>
+            <a href="#">Ver no mapa →</a>
+          </div>
+        </article>
+
+        <article class="filter-card">
+          <div class="bubble i-flood"></div>
+          <div class="filter-text">
+            <h4>Enchentes</h4>
+            <p>Relevo (SRTM) + chuva (GPM) para mapear risco de inundação.</p>
+            <a href="#">Ver no mapa →</a>
+          </div>
+        </article>
+      </div>
+    </aside>
+  </main>
+
+  <!-- FAIXA INFERIOR: GRÁFICO + TÍTULO/DESCRIÇÃO -->
+  <section class="container bottom">
+    <div class="chart glass">
+      <div class="chart-mock">Gráfico</div>
+    </div>
+    <div class="chart-info glass">
+      <div class="chart-title">Título</div>
+      <div class="chart-desc">
+        <p><strong>Descrição do gráfico</strong><br>
+          Em Recife, o Bairro X apresenta alta temperatura, baixa vegetação e risco de enchente — prioridade máxima para parque urbano e infraestrutura verde.</p>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="contato" class="site-footer glass-min">
-    <div class="container footer-grid">
-      <div>Links: <a href="#inicio">Sobre</a> • <a href="#como-funciona">Documentação</a> • <a href="#contato">Contato</a></div>
-      <div>© City Health Dashboard — dados NASA + fontes abertas</div>
+  <!-- POPUP DO ASSISTENTE (rosa) -->
+  <div id="assistantPopup" class="assistant hidden" role="dialog" aria-label="Assistente virtual">
+    <div class="assistant-head">
+      <span>Assistente</span>
+      <button id="assistantClose" aria-label="Fechar">✕</button>
     </div>
-  </footer>
+    <div class="assistant-body">
+      <div class="msg bot">Olá! Posso ajudar a interpretar os dados do mapa 😉</div>
+      <div class="msg user">Quais bairros têm maior risco de calor?</div>
+    </div>
+    <form class="assistant-input" id="assistantForm">
+      <input id="assistantText" type="text" placeholder="Digite sua mensagem..." />
+      <button aria-label="Enviar">➤</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
